@@ -20,12 +20,11 @@ class Venue
   end
 
   def over_capacity?
-    capacity = 5
     num_of_patrons = @patrons.count
 
-    # if the items in patrons array is greater or equal to capacity,
+    # if the items in patrons array is greater or equal to @capacity,
     # then returns true, else will return false.
-    if num_of_patrons >= capacity
+    if num_of_patrons >= @capacity
       return true
     else
       return false

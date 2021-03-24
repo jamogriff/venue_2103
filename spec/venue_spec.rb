@@ -48,7 +48,6 @@ describe Venue do
   end
 
   # Self-written tests begin here
-  # Note: Capacity is designed to be capped at 5
   describe '#over_capacity?' do
     it 'returns false if under capacity' do
       venue = Venue.new('Bluebird', 4)
