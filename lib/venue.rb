@@ -31,4 +31,10 @@ class Venue
       return false
     end
   end
+
+  def kick_out
+    until self.over_capacity? == false do
+      @patrons.pop # note that an accumulator is not necessary when using pop
+    end
+  end
 end

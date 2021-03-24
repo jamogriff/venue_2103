@@ -68,4 +68,21 @@ describe Venue do
       expect(venue.over_capacity?).to eq(true)
     end
   end
+
+  describe '#kick_out' do
+    it 'returns an array less than capacity' do
+      venue = Venue.new('Bluebird', 4)
+      venue.add_patron('Mike')
+      venue.add_patron('Megan')
+      venue.add_patron('Bob')
+      venue.add_patron('Seymour')
+      venue.add_patron('Melinda')
+      venue.add_patron('Broseph')
+      venue.add_patron('Greg the II')
+
+      venue.kick_out # this line should be deleting array elements
+
+      expect(venue.over_capacity?).to eq(false)
+    end
+  end
 end
