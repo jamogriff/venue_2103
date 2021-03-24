@@ -31,6 +31,10 @@ class Venue
     end
   end
 
+  # NOTE: This method along with its subsequent components
+  # were all tested thoroughly using pry in ./test/pry_test.rb.
+  # Method knocks off the last element added to the array until
+  # over_capacity? is equal to false.
   def kick_out
     until self.over_capacity? == false do
       @patrons.pop # note that an accumulator is not necessary when using pop
