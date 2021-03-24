@@ -46,4 +46,26 @@ describe Venue do
       expect(venue.yell_at_patrons).to eq ['MIKE', 'MEGAN', 'BOB']
     end
   end
+
+  # Self-written tests begin here
+  # Note: Capacity is designed to be capped at 5
+  describe '#over_capacity?' do
+    it 'returns false if under capacity' do
+      venue = Venue.new('Bluebird', 4)
+      venue.add_patron('Mike')
+      venue.add_patron('Megan')
+      venue.add_patron('Bob')
+      expect(venue.over_capacity?).to eq(false)
+    end
+
+    it 'returns true if over capacity' do
+      venue = Venue.new('Bluebird', 4)
+      venue.add_patron('Mike')
+      venue.add_patron('Megan')
+      venue.add_patron('Bob')
+      venue.add_patron('Seymour')
+      venue.add_patron('Melinda')
+      expect(venue.over_capacity?).to eq(true)
+    end
+  end
 end
