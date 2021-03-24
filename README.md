@@ -34,7 +34,7 @@ For iteration 2, we have created all of the tests you will need
 unskip tests one by one, making each pass before moving on the the next test.
 The tests will model the interaction pattern below.
 
-`yell_at_patrons` should return an array of patrons with their names in call caps
+`yell_at_patrons` should return an array of patrons with their names in all caps
 
 ```ruby
 pry(main)> require './lib/venue'
