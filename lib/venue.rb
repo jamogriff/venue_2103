@@ -1,16 +1,20 @@
 class Venue
   attr_reader :name, :capacity, :patrons
 
+  # Initializes two parameters and an empty array
   def initialize(venue_name, venue_capacity)
     @patrons = []
     @name = venue_name
     @capacity = venue_capacity
   end
 
+  # Adds an element as a string to the patrons array
   def add_patron(patron_name)
     @patrons << patron_name
   end
 
+  # Returns a new array of patrons with capitalized elements
+  # NOTE: an accumulator is created to hold this new array
   def yell_at_patrons
     capitalized_names = []
     @patrons.each do |patron|
@@ -19,11 +23,11 @@ class Venue
     return capitalized_names
   end
 
+  # If the elements in patrons array is greater or equal to @capacity,
+  # then method returns true, else method will return false.
   def over_capacity?
     num_of_patrons = @patrons.count
 
-    # if the items in patrons array is greater or equal to @capacity,
-    # then returns true, else will return false.
     if num_of_patrons >= @capacity
       return true
     else
@@ -40,4 +44,5 @@ class Venue
       @patrons.pop # note that an accumulator is not necessary when using pop
     end
   end
+
 end
